@@ -16,7 +16,7 @@ all: $(NAME)
 $(NAME): $(CLIENT) $(SERVER)
 
 $(LIBFT):
-	$(MAKE) $(CFLAGS) -C ./libft
+	$(MAKE) -C ./libft
 
 $(CLIENT): $(C_OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) -o $@ $(C_OBJ) $(LIBFT)
@@ -25,13 +25,13 @@ $(SERVER): $(S_OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) -o $@ $(S_OBJ) $(LIBFT)
 
 clean:
-	make clean -C ./libft
-	rm -rf $(SERVER) $(CLIENT) $(C_OBJ) $(S_OBJ)
+	$(MAKE) clean -C ./libft
+	$(RM) $(C_OBJ) $(S_OBJ)
 
 fclean: clean
-	make fclean -C ./libft
+	$(MAKE) fclean -C ./libft
+	$(RM) $(CLIENT) $(SERVER)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-	
