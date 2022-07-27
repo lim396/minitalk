@@ -14,7 +14,7 @@
 
 volatile sig_atomic_t	g_sig = 0;
 
-void	hoge(void)
+static void	decrypt_msg(void)
 {
 	static char	c = '\0';
 	static int	i = 0;
@@ -31,7 +31,7 @@ void	hoge(void)
 	}
 }
 
-void	handler(int bit)
+static void	handler(int bit)
 {
 	g_sig = bit;
 }
@@ -49,7 +49,7 @@ int	main(void)
 	while (1)
 	{
 		pause();
-		hoge();
+		decrypt_msg();
 	}
 	return (0);
 }

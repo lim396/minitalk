@@ -67,4 +67,5 @@ int	main(int argc, char **argv)
 		exit(1);
 	sig = argv[2];
 	messenger(pid, sig);
+	return (0);
 }

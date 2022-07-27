@@ -12,7 +12,7 @@
 
 #include "minitalk.h"
 
-int	check_only_digit(char *str)
+static int	check_only_digit(char *str)
 {
 	size_t	i;
 
@@ -28,7 +28,7 @@ int	check_only_digit(char *str)
 	return (1);
 }
 
-void	messenger(int pid, char *msg)
+static void	messenger(int pid, char *msg)
 {
 	int		nbit;
 	int		which_bit;
@@ -67,4 +67,5 @@ int	main(int argc, char **argv)
 		exit(1);
 	sig = argv[2];
 	messenger(pid, sig);
+	return (0);
 }
