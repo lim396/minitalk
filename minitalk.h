@@ -15,6 +15,7 @@
 
 # include <signal.h>
 # include <unistd.h>
+# include <limits.h>
 # include "libft/libft.h"
 
 # define MAX_RIGHT_SHIFT 7
