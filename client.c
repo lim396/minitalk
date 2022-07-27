@@ -23,6 +23,8 @@ static int	check_only_digit(char *str)
 	{
 		if (ft_isdigit(str[i]) == 0)
 			return (0);
+		if (i >= INT_MAX)
+			return (0);
 		i++;
 	}
 	return (1);
